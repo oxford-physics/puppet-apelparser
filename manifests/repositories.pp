@@ -1,4 +1,6 @@
-class apelparser::repositories {
+class apelparser::repositories inherits apelparser::params{
+if $setup_repo {
+
   yumrepo { 'epel':
     descr          => 'Extra Packages for Enterprise Linux 6 - $basearch',
     enabled        => 1,
@@ -47,4 +49,9 @@ class apelparser::repositories {
     enabled  => 1,
     priority => 40,
   }
+ }
+else {
+   notify {" repositories are not setup by apel parser module module" :}
+ }
+
 }
