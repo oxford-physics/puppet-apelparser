@@ -51,7 +51,7 @@ if $setup_repo {
   }
  }
 else {
-   notify {" repositories are not setup by apel parser module module" :}
+#   notify {" repositories are not setup by apel parser module module" :}
  }
 
 }

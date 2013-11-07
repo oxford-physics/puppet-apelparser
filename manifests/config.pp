@@ -1,10 +1,11 @@
 class apelparser::config (
   $mysql_hostname = $apelparser::params::mysql_hostname,
   $mysql_port     = $apelparser::params::mysql_port,
-  $mysql_database = $apelparser::params::mysql_database,
-  $mysql_user     = $apelparser::params::mysql_user,
-  $mysql_password = $apelparser::params::mysql_password,
-  $site_name      = $apelparser::params::site_name, ) {
+  $apel_database = $apelparser::params::apel_database,
+  $apel_user     = $apelparser::params::apel_user,
+  $apel_password = $apelparser::params::apel_password,
+  $site_name      = $apelparser::params::site_name,
+  $lrms_server    = $apelparser::params::lrms_server, )  {
   file { '/etc/apel/parser.cfg':
     owner   => "root",
     group   => "root",

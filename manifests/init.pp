@@ -20,6 +20,5 @@ class { 'apelparser::repositories': }
 
   class { 'apelparser::cron': }
 
-  Class['apelparser::repositories'] -> Class['apelparser::install'] -> 
-  Class['apelparser::config'] -> Class['apelparser::cron']
+#  Class['apelparser::repositories'] -> Class['apelparser::install'] -> Class['apelparser::config'] -> Class['apelparser::cron']
 }

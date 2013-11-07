@@ -5,9 +5,9 @@
 [db]
 hostname = <%= mysql_hostname %>
 port = <%= mysql_port %>
-name = <%= mysql_database %>
-username = <%= mysql_user %>
-password = <%= mysql_password %>
+name = <%= apel_database %>
+username = <%= apel_user %>
+password = <%= apel_password %>
 
 [blah]
 enabled = true
@@ -52,9 +52,11 @@ site_name = <%= site_name %>
 # Batch system hostname.  This does not need to be a definitive hostname,
 # but it should uniquely identify the batch system.
 # Example: pbs.gridpp.rl.ac.uk
-lrms_server = <%= fqdn %>
-
-
+<% if (@lrms_server != "fqdn") %>
+lrms_server = <%= @lrms_server %>
+<% else %>
+lrms_server = <%= @fqdn %>
+<% end %>
 [logging]
 logfile = /var/log/apelparser.log
 level = INFO
